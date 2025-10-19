@@ -1,0 +1,10 @@
+In order to use the esp32s3-zero which has 4MB memory
+do this:
+
+- Put file esp32-s3-devkitc-1_4mb.json
+in your directory:
+.platformio/platforms/espressif32/boards
+
+- Put file default_4MB.csv
+in your directory:
+.platformio/packages/framework-arduinoespressif32/tools/partitions

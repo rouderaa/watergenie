@@ -1,0 +1,285 @@
+Terminals unused in grammar
+
+    HEXNUMBER
+    reset
+
+
+Grammar
+
+    0 $accept: program $end
+
+    1 program: command NEWLINE
+    2        | command
+
+    3 command: led_command
+    4        | help_command
+    5        | reset_command
+    6        | set_command
+    7        | get_command
+    8        | time_command
+    9        | clear_command
+   10        | log_command
+
+   11 led_command: LED ON
+   12            | LED OFF
+
+   13 help_command: HELP
+
+   14 reset_command: RESET
+
+   15 set_command: SET NUMBER
+
+   16 get_command: GET
+
+   17 time_command: TIME
+
+   18 clear_command: CLEAR
+
+   19 log_command: LOG
+
+
+Terminals, with rules where they appear
+
+    $end (0) 0
+    error (256)
+    HEXNUMBER <string> (258)
+    NUMBER <lvalue> (259) 15
+    LED (260) 11 12
+    ON (261) 11
+    OFF (262) 12
+    HELP (263) 13
+    NEWLINE (264) 1
+    RESET (265) 14
+    SET (266) 15
+    GET (267) 16
+    TIME (268) 17
+    LOG (269) 19
+    CLEAR (270) 18
+    reset (271)
+
+
+Nonterminals, with rules where they appear
+
+    $accept (17)
+        on left: 0
+    program (18)
+        on left: 1 2
+        on right: 0
+    command (19)
+        on left: 3 4 5 6 7 8 9 10
+        on right: 1 2
+    led_command (20)
+        on left: 11 12
+        on right: 3
+    help_command (21)
+        on left: 13
+        on right: 4
+    reset_command (22)
+        on left: 14
+        on right: 5
+    set_command (23)
+        on left: 15
+        on right: 6
+    get_command (24)
+        on left: 16
+        on right: 7
+    time_command (25)
+        on left: 17
+        on right: 8
+    clear_command (26)
+        on left: 18
+        on right: 9
+    log_command (27)
+        on left: 19
+        on right: 10
+
+
+State 0
+
+    0 $accept: • program $end
+
+    LED    shift, and go to state 1
+    HELP   shift, and go to state 2
+    RESET  shift, and go to state 3
+    SET    shift, and go to state 4
+    GET    shift, and go to state 5
+    TIME   shift, and go to state 6
+    LOG    shift, and go to state 7
+    CLEAR  shift, and go to state 8
+
+    program        go to state 9
+    command        go to state 10
+    led_command    go to state 11
+    help_command   go to state 12
+    reset_command  go to state 13
+    set_command    go to state 14
+    get_command    go to state 15
+    time_command   go to state 16
+    clear_command  go to state 17
+    log_command    go to state 18
+
+
+State 1
+
+   11 led_command: LED • ON
+   12            | LED • OFF
+
+    ON   shift, and go to state 19
+    OFF  shift, and go to state 20
+
+
+State 2
+
+   13 help_command: HELP •
+
+    $default  reduce using rule 13 (help_command)
+
+
+State 3
+
+   14 reset_command: RESET •
+
+    $default  reduce using rule 14 (reset_command)
+
+
+State 4
+
+   15 set_command: SET • NUMBER
+
+    NUMBER  shift, and go to state 21
+
+
+State 5
+
+   16 get_command: GET •
+
+    $default  reduce using rule 16 (get_command)
+
+
+State 6
+
+   17 time_command: TIME •
+
+    $default  reduce using rule 17 (time_command)
+
+
+State 7
+
+   19 log_command: LOG •
+
+    $default  reduce using rule 19 (log_command)
+
+
+State 8
+
+   18 clear_command: CLEAR •
+
+    $default  reduce using rule 18 (clear_command)
+
+
+State 9
+
+    0 $accept: program • $end
+
+    $end  shift, and go to state 22
+
+
+State 10
+
+    1 program: command • NEWLINE
+    2        | command •
+
+    NEWLINE  shift, and go to state 23
+
+    $default  reduce using rule 2 (program)
+
+
+State 11
+
+    3 command: led_command •
+
+    $default  reduce using rule 3 (command)
+
+
+State 12
+
+    4 command: help_command •
+
+    $default  reduce using rule 4 (command)
+
+
+State 13
+
+    5 command: reset_command •
+
+    $default  reduce using rule 5 (command)
+
+
+State 14
+
+    6 command: set_command •
+
+    $default  reduce using rule 6 (command)
+
+
+State 15
+
+    7 command: get_command •
+
+    $default  reduce using rule 7 (command)
+
+
+State 16
+
+    8 command: time_command •
+
+    $default  reduce using rule 8 (command)
+
+
+State 17
+
+    9 command: clear_command •
+
+    $default  reduce using rule 9 (command)
+
+
+State 18
+
+   10 command: log_command •
+
+    $default  reduce using rule 10 (command)
+
+
+State 19
+
+   11 led_command: LED ON •
+
+    $default  reduce using rule 11 (led_command)
+
+
+State 20
+
+   12 led_command: LED OFF •
+
+    $default  reduce using rule 12 (led_command)
+
+
+State 21
+
+   15 set_command: SET NUMBER •
+
+    $default  reduce using rule 15 (set_command)
+
+
+State 22
+
+    0 $accept: program $end •
+
+    $default  accept
+
+
+State 23
+
+    1 program: command NEWLINE •
+
+    $default  reduce using rule 1 (program)
