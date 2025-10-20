@@ -5,6 +5,11 @@ A smart water meter monitoring system built for the ESP32-S3 that tracks water c
 ## Overview
 
 ESP32 Water Genie monitors water consumption by detecting pulses from a water meter's indicator using an optical or magnetic probe. The system logs timestamped readings and provides a command-line interface over Telnet for configuration and data retrieval.
+It uses the position of the back of the red arrow of the watermeter to detect that another litre of water has been used.
+
+<img src="assets/watermeter.JPG" alt="Conventional water meter" style="width: 400px; max-width: 100%;">
+<img src="assets/watergenietop.JPG" alt="Top view watergenie" style="width: 400px; max-width: 100%;">
+<img src="assets/watergeniebottom.JPG" alt="Bottom view watergenie" style="width: 400px; max-width: 100%;">
 
 ## Features
 
