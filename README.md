@@ -26,7 +26,7 @@ It uses the position of the back of the red arrow of the watermeter to detect th
 - Water meter pulse sensor (hall sensor)
 For example: 
 M18 8mm detectie DC 5V NPN PNP NO NC LJ18A3-8-Z/BX
-Connect a 1Kohm resistor to 3.3v and the dection line of the sensor since it has an open collector output.
+Connect a 1Kohm resistor to 3.3v and the detection line of the sensor since it has an open collector output.
 - Sensor connected to GPIO pin 4
 
 ## Pin Configuration
