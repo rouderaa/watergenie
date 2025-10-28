@@ -187,7 +187,10 @@ void setup()
 
     Serial.println("Initializing....");
     
-    WiFi.mode(WIFI_STA);  // Set to station mode
+    // Configure static IP before WiFi.begin()
+    if (!WiFi.config(local_IP, gateway, subnet, primaryDNS, secondaryDNS)) {
+        Serial.println("STA Failed to configure");
+    }
     WiFi.begin(ssid, password);
 
     // Wait for connection
